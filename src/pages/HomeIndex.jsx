@@ -15,7 +15,7 @@ export function HomeIndex() {
             <Link to={'/login-page'} className='btn text-white text-lg secondary-bg capitalize  border-none'>login / register</Link>
           </div>
           <div>
-            <img className='size-48 sm:size-full' src="https://res.cloudinary.com/dxm0sqcfp/image/upload/v1742727170/jamoveo/einlrck60guxxm8hd7jd.svg" alt="Job Tracking App" />
+            <img className='size-48 sm:size-full' src="https://res.cloudinary.com/dxm0sqcfp/image/upload/v1742761436/jamoveo/undraw_mello_uiud_gml1lf.svg" alt="home page ilustration" />
           </div>
         </div>
       </div>

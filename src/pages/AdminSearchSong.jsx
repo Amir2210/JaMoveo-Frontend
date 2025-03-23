@@ -88,7 +88,7 @@ export function AdminSearchSong() {
                     </div>
                     <div className='flex gap-2 items-center'>
                       <p>{song.artist}</p>
-                      <img className='size-16' src={song.imgUrl} alt="" />
+                      <img className='size-16' src={song.imgUrl} alt="song picture" />
                     </div>
                   </div>
                 ))
@@ -99,7 +99,7 @@ export function AdminSearchSong() {
           </div>
 
           <div>
-            <img className='size-48 sm:size-full' src="https://res.cloudinary.com/dxm0sqcfp/image/upload/v1742741494/jamoveo/undraw_happy-music_na4p_ir0kkh.svg" alt="Job Tracking App" />
+            <img className='size-48 sm:size-full' src="https://res.cloudinary.com/dxm0sqcfp/image/upload/v1742741494/jamoveo/undraw_happy-music_na4p_ir0kkh.svg" alt="admin search song ilustration" />
           </div>
         </div>
       </div>

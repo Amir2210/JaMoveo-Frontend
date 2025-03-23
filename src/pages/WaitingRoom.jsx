@@ -37,7 +37,7 @@ export function WaitingRoom() {
             </h1>
           </div>
           <div>
-            <img className='size-48 sm:size-full' src="https://res.cloudinary.com/dxm0sqcfp/image/upload/v1742741867/jamoveo/undraw_listening_fz9g_ktghit.svg" alt="Job Tracking App" />
+            <img className='size-48 sm:size-full' src="https://res.cloudinary.com/dxm0sqcfp/image/upload/v1742741867/jamoveo/undraw_listening_fz9g_ktghit.svg" alt="witing room ilustration" />
           </div>
         </div>
       </div>
