@@ -1,12 +1,15 @@
 import { AppHeader } from './components/AppHeader'
-
+import { Routes, Route } from 'react-router'
+import { HomeIndex } from './pages/HomeIndex'
 
 function App() {
 
   return (
     <div>
       <AppHeader />
-      <h1>Welcome to JaMoveo</h1>
+      <Routes>
+        <Route path='/' element={<HomeIndex />} />
+      </Routes>
     </div>
   )
 }
