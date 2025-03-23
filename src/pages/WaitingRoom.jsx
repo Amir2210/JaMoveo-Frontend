@@ -1,5 +1,3 @@
-import { FaMusic } from "react-icons/fa";
-
 export function WaitingRoom() {
   return (
     <section className='main-bg h-screen'>
