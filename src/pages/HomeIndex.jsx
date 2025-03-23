@@ -12,7 +12,7 @@ export function HomeIndex() {
           <div>
             <h1 className='text-5xl sm:text-6xl font-bold tracking-wide capitalize mb-6'><span className='secondary-txt'>Playing</span>  and <span className='secondary-txt'>singing</span>  together</h1>
             <p className='sm:text-xl tracking-widest mb-3'>The app allows users to play and sing together, creating a collaborative music experience where players can play instruments while singers follow along with lyrics in real-time.</p>
-            <Link to={'/login'} className='btn text-white text-lg secondary-bg capitalize  border-none'>login / register</Link>
+            <Link to={'/login-page'} className='btn text-white text-lg secondary-bg capitalize  border-none'>login / register</Link>
           </div>
           <div>
             <img className='size-48 sm:size-full' src="https://res.cloudinary.com/dxm0sqcfp/image/upload/v1742727170/jamoveo/einlrck60guxxm8hd7jd.svg" alt="Job Tracking App" />

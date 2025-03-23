@@ -23,5 +23,9 @@
     @apply text-[#1DB954]
   }
 
+  .border {
+    @apply border-solid border-2 border-[#1DB954]
+  }
+
 
 }
