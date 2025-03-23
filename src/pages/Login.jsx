@@ -25,7 +25,7 @@ export function Login() {
       if (user.isAdmin) {
         navigate('/admin-search-song-page')
       } else {
-        navigate('/')
+        navigate('/waiting-room-page')
       }
     } catch (err) {
       toast.error(`invalid username or password`)
