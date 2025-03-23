@@ -2,7 +2,7 @@ import { userService } from '../../services/user.service.js';
 // import { socketService } from '../../services/socket.service.js';
 import { store } from '../store.js';
 
-import { LOADING_DONE, LOADING_START } from "../reducers/system.reducer.js";
+import { LOADING_DONE, LOADING_START, SET_SONG } from "../reducers/system.reducer.js";
 import { SET_USER, SET_USERS, } from "../reducers/user.reducer.js";
 
 export async function loadUsers() {
@@ -59,6 +59,18 @@ export async function logout() {
         // socketService.logout()
     } catch (err) {
         console.log('Cannot logout', err)
+        throw err
+    }
+}
+
+export async function setSong(song) {
+    try {
+        store.dispatch({
+            type: SET_SONG,
+            song
+        })
+    } catch (error) {
+        console.log('cannot set song')
         throw err
     }
 }

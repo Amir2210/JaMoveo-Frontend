@@ -1,23 +1,6 @@
 import { useState } from 'react'
-
-// נתוני השירים (Hardcoded)
-const songsData = [
-  {
-    title: "Hey Jude",
-    lyrics: [
-      [{ lyrics: "Hey" }, { lyrics: "Jude", chords: "F" }, { lyrics: "don't" }],
-      [{ lyrics: "Take" }, { lyrics: "a" }, { lyrics: "sad", chords: "C7" }, { lyrics: "song", chords: "C4/7" }],
-      [{ lyrics: "Remember", chords: "Bb" }, { lyrics: "to" }, { lyrics: "let" }]
-    ]
-  },
-  {
-    title: "ואיך שלא אפנה",
-    lyrics: [
-      [{ lyrics: "ואיך" }, { lyrics: "שלא", chords: "Em" }, { lyrics: "אפנה" }],
-      [{ lyrics: "תמיד" }, { lyrics: "איתה", chords: "Cmaj7" }, { lyrics: "ארצה" }]
-    ]
-  }
-]
+import { songsData } from '../data/song.data'
+import { setSong } from '../store/actions/user.actions'
 
 export function AdminSearchSong() {
   const [search, setSearch] = useState('')
@@ -44,7 +27,10 @@ export function AdminSearchSong() {
         if (titleMatch || matchedLines.length > 0) {
           return {
             title: song.title,
-            preview: matchedLines.flat().map(word => word.lyrics).slice(0, 6).join(' ') // מציג 6 מילים ראשונות
+            artist: song.artist,
+            preview: matchedLines.flat().map(word => word.lyrics).slice(0, 6).join(' '), // מציג 6 מילים ראשונות
+            imgUrl: song.imgUrl,
+            fullSong: song.lyrics
           }
         }
         return null
@@ -52,6 +38,14 @@ export function AdminSearchSong() {
       .filter(song => song !== null) // מסנן תוצאות ריקות
 
     setResults(filteredSongs)
+  }
+
+  async function onSetSong(song) {
+    try {
+      const songas = await setSong(song)
+    } catch (error) {
+      console.log('error:', error)
+    }
   }
 
   return (
@@ -85,9 +79,15 @@ export function AdminSearchSong() {
             <div className="mt-5">
               {results.length > 0 ? (
                 results.map((song, index) => (
-                  <div key={index} className="bg-gray-800 p-4 rounded-lg mb-3">
-                    <h2 className="text-white font-bold text-lg">{song.title}</h2>
-                    <p className="text-gray-400 text-sm">{song.preview}...</p>
+                  <div onClick={() => onSetSong(song)} key={index} className="bg-gray-800 p-4 rounded-lg mb-3 flex justify-between items-center cursor-pointer">
+                    <div className=''>
+                      <h2 className="text-white font-bold text-lg">{song.title}</h2>
+                      <p className="text-gray-400 text-sm">{song.preview}...</p>
+                    </div>
+                    <div className='flex gap-2 items-center'>
+                      <p>{song.artist}</p>
+                      <img className='size-16' src={song.imgUrl} alt="" />
+                    </div>
                   </div>
                 ))
               ) : search ? (
