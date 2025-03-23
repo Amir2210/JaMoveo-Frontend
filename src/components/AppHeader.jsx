@@ -7,6 +7,7 @@ export function AppHeader() {
           <li><Link to={'/'}>Home page</Link></li>
           <li><Link to={'/login-page'}>login page</Link></li>
           <li><Link to={'/sign-up-page'}>sign up page</Link></li>
+          <li><Link to={'/admin-sign-up-page'}>admin sign up page</Link></li>
         </ul>
       </nav>
     </header>
