@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { songsData } from '../data/song.data'
 import { setSong } from '../store/actions/user.actions'
+import { useNavigate } from 'react-router'
 
 export function AdminSearchSong() {
   const [search, setSearch] = useState('')
   const [results, setResults] = useState([])
-
+  const navigate = useNavigate()
   // פונקציה לחיפוש שירים ללא תלות באותיות קטנות/גדולות
   const handleSearch = (query) => {
     setSearch(query)
@@ -42,7 +43,8 @@ export function AdminSearchSong() {
 
   async function onSetSong(song) {
     try {
-      await setSong(song)
+      await setSong(song, true)
+      navigate('/live-song-page')
     } catch (error) {
       console.log('error:', error)
     }

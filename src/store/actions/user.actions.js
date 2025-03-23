@@ -63,13 +63,15 @@ export async function logout() {
     }
 }
 
-export async function setSong(song) {
+export async function setSong(song, isAdmin) {
     try {
         store.dispatch({
             type: SET_SONG,
             song
         })
-        socketService.emit(SOCKET_EMIT_ADMIN_SET_SONG, song)
+        if (isAdmin) {
+            socketService.emit(SOCKET_EMIT_ADMIN_SET_SONG, song)
+        }
     } catch (error) {
         console.log('cannot set song')
         throw err

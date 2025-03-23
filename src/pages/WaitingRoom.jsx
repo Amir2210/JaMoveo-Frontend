@@ -1,17 +1,20 @@
 import { SOCKET_EVENT_ADMIN_CHOOSE_SONG, socketService } from '../services/socket.service'
 import { useEffect } from 'react'
+import { setSong } from '../store/actions/user.actions'
+import { useNavigate } from 'react-router'
 export function WaitingRoom() {
-
+  const navigate = useNavigate()
   useEffect(() => {
     console.log('sd')
-    socketService.on(SOCKET_EVENT_ADMIN_CHOOSE_SONG, setSong)
+    socketService.on(SOCKET_EVENT_ADMIN_CHOOSE_SONG, onSetSong)
     return () => {
-      socketService.off(SOCKET_EVENT_ADMIN_CHOOSE_SONG, setSong)
+      socketService.off(SOCKET_EVENT_ADMIN_CHOOSE_SONG, onSetSong)
     }
   }, [])
 
-  function setSong(song) {
-    console.log('song:', song)
+  function onSetSong(song) {
+    setSong(song, false)
+    navigate('/live-song-page')
   }
   return (
     <section className='main-bg h-screen'>
