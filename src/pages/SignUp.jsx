@@ -26,7 +26,7 @@ export function SignUp() {
       const user = await signup(credentials)
       await login(credentials)
       alert(`welcome ${credentials.username} 😀`)
-      navigate('/')
+      navigate('/waiting-room-page')
     } catch (err) {
       console.log('err:', err)
       alert(`failed to create user try again later`)
