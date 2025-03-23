@@ -14,4 +14,14 @@
   .main-bg {
     @apply bg-[#121212];
   }
+
+  .secondary-bg {
+    @apply bg-[#1DB954] hover:bg-[#1a9e46]
+  }
+
+  .secondary-txt {
+    @apply text-[#1DB954]
+  }
+
+
 }
