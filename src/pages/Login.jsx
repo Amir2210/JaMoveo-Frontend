@@ -20,8 +20,13 @@ export function Login() {
   async function onLogin(ev) {
     ev.preventDefault()
     try {
-      await login(credentials)
-      navigate('/')
+      const user = await login(credentials)
+      console.log('user:', user)
+      if (user.isAdmin) {
+        navigate('/admin-search-song-page')
+      } else {
+        navigate('/')
+      }
     } catch (err) {
       toast.error(`invalid username or password`)
     }

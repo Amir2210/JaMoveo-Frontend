@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router';
-import { signup } from '../store/actions/user.actions';
+import { login, signup } from '../store/actions/user.actions';
 import { useState } from 'react';
 function getEmptyCredentials() {
   return {
@@ -26,7 +26,7 @@ export function SignUpAdmin() {
       const user = await signup(credentials)
       await login(credentials)
       alert(`welcome ${credentials.username} 😀`)
-      navigate('/')
+      navigate('/admin-search-song-page')
     } catch (err) {
       alert(`failed to create user try again later`)
     }
