@@ -1,10 +1,12 @@
+import { AppHeader } from './components/AppHeader'
 
 
 function App() {
 
   return (
     <div>
-      <h1>clean</h1>
+      <AppHeader />
+      <h1>Welcome to JaMoveo</h1>
     </div>
   )
 }
