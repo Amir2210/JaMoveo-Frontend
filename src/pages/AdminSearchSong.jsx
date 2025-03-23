@@ -42,7 +42,7 @@ export function AdminSearchSong() {
 
   async function onSetSong(song) {
     try {
-      const songas = await setSong(song)
+      await setSong(song)
     } catch (error) {
       console.log('error:', error)
     }

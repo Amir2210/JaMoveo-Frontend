@@ -1,4 +1,18 @@
+import { SOCKET_EVENT_ADMIN_CHOOSE_SONG, socketService } from '../services/socket.service'
+import { useEffect } from 'react'
 export function WaitingRoom() {
+
+  useEffect(() => {
+    console.log('sd')
+    socketService.on(SOCKET_EVENT_ADMIN_CHOOSE_SONG, setSong)
+    return () => {
+      socketService.off(SOCKET_EVENT_ADMIN_CHOOSE_SONG, setSong)
+    }
+  }, [])
+
+  function setSong(song) {
+    console.log('song:', song)
+  }
   return (
     <section className='main-bg h-screen'>
       <div className="small-container sm:big-container">

@@ -1,5 +1,5 @@
 import { userService } from '../../services/user.service.js';
-import { socketService } from '../../services/socket.service.js';
+import { socketService, SOCKET_EMIT_ADMIN_SET_SONG } from '../../services/socket.service.js';
 import { store } from '../store.js';
 
 import { LOADING_DONE, LOADING_START, SET_SONG } from "../reducers/system.reducer.js";
@@ -69,6 +69,7 @@ export async function setSong(song) {
             type: SET_SONG,
             song
         })
+        socketService.emit(SOCKET_EMIT_ADMIN_SET_SONG, song)
     } catch (error) {
         console.log('cannot set song')
         throw err

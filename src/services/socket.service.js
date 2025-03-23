@@ -2,6 +2,8 @@ import io from 'socket.io-client'
 import { userService } from './user.service'
 
 
+export const SOCKET_EMIT_ADMIN_SET_SONG = 'admin-set-song'
+export const SOCKET_EVENT_ADMIN_CHOOSE_SONG = 'admin-choose-song'
 
 export const SOCKET_EMIT_LOGIN = 'set-user-socket'
 const SOCKET_EMIT_LOGOUT = 'unset-user-socket'
