@@ -9,7 +9,7 @@ function App() {
 
   return (
     <main>
-      <AppHeader />
+      {/* <AppHeader /> */}
       <Routes>
         <Route path='/' element={<HomeIndex />} />
         <Route path='/login-page' element={<Login />} />
