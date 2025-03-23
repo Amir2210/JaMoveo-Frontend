@@ -9,7 +9,7 @@ export function Login() {
           <div className=' ml-4 text-3xl font-bold tracking-wide secondary-txt'>JaMoveo</div>
         </Link>
         <div className='flex justify-center items-center'>
-          <h1 className=' text-3xl my-4 capitalize'>login</h1>
+          <h1 className='text-white sm:text-black text-3xl my-4 capitalize'>login</h1>
         </div>
         <label className="input input-bordered flex items-center gap-2 my-3 w-full bg-white">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" /></svg>
@@ -22,7 +22,7 @@ export function Login() {
         </label>
         {/* <p className={`text-red-400 sm:py-3 ${errors.password && 'py-0'}`}>{errors.password}</p> */}
         <button className='btn border text-white  secondary-bg  capitalize text-2xl w-full my-3'>Login</button>
-        <span className='text-lg'>Not a member yet? <Link className='capitalize secondary-txt font-medium' to={'/sign-up-page'}> register</Link></span>
+        <span className='text-lg text-white sm:text-black'>Not a member yet? <Link className='capitalize secondary-txt font-medium' to={'/sign-up-page'}> register</Link></span>
       </form>
     </section>
   )
