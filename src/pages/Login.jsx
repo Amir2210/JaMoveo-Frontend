@@ -24,7 +24,7 @@ export function Login() {
       const user = await login(credentials)
       if (user.isAdmin) {
         navigate('/admin-search-song-page')
-        toast.success("You've logged in successfully")
+        toast.success("You've logged in successfully 😀")
       } else {
         navigate('/waiting-room-page')
       }
