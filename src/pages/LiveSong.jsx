@@ -9,12 +9,12 @@ import { SOCKET_EVENT_ADMIN_SEARCH_PICK_NEW_SONG } from '../services/socket.serv
 
 export function LiveSong() {
   const selectedSong = useSelector((storeState) => storeState.systemModule.songSelected)
+  console.log('selectedSong:', selectedSong)
   const userInstrument = useSelector((storeState) => storeState.userModule.user.instrument)
   const isAdmin = useSelector((storeState) => storeState.userModule.user.isAdmin)
   const navigate = useNavigate()
   const audioRef = useRef(null)
 
-  // 🎵 הפעלת השיר אוטומטית כשהקומפוננטה נטענת
   useEffect(() => {
     socketService.on(SOCKET_EVENT_ADMIN_SEARCH_PICK_NEW_SONG, onAdminPauseLive)
     if (audioRef.current) {
@@ -50,10 +50,17 @@ export function LiveSong() {
         </div>
         <div className='grid sm:grid-cols-2 gap-10 mt-5 sm:mt-20 text-[#B3B3B3]'>
           <div>
-            <h1 className='text-5xl sm:text-6xl font-bold tracking-wide capitalize mb-6'>
-              Now Playing <span className='secondary-txt'>{selectedSong.title} </span>
-              by: <span className='secondary-txt'>{selectedSong.artist}</span>
-            </h1>
+            <div className='flex items-center mb-6'>
+              <p className='text-2xl sm:text-3xl font-bold tracking-wide capitalize pr-1'>Now Playing:</p>
+              <p className='font-bold capitalize tracking-wide text-3xl sm:text-4xl secondary-txt'>{selectedSong.title}</p>
+            </div>
+            <div className='flex items-center mb-6'>
+              <p className='text-2xl sm:text-3xl font-bold tracking-wide capitalize pr-1'>By:</p>
+              <p className='font-bold capitalize tracking-wide text-3xl sm:text-4xl secondary-txt'>{selectedSong.artist}</p>
+            </div>
+            <div className=' mb-6'>
+              <img className='size-24' src={selectedSong.imgUrl} alt="" />
+            </div>
             {isAdmin ?
               <button onClick={onGoBackPickSong} className='btn text-white text-lg secondary-bg capitalize border-none'>pick a new song</button>
               : null
