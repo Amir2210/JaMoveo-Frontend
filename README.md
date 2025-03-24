@@ -1,12 +1,22 @@
-# React + Vite
+# 🎵 JaMoveo  
+**Real-Time Collaborative Music Rehearsal Platform**  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+JaMoveo is a **web application** that enables musicians to **rehearse together remotely**. Users can log in, select their instrument, and join a session where an **admin user controls the song selection and display**. The platform synchronizes song lyrics and chords in real time, ensuring a seamless rehearsal experience.  
 
-Currently, two official plugins are available:
+## 🚀 Features  
+- ✅ **User Authentication** – Log in and register as a musician.  
+- ✅ **Instrument Selection** – Choose your instrument when signing up.  
+- ✅ **Admin-Controlled Sessions** – The admin can create and manage rehearsal sessions.  
+- ✅ **Song Search & Selection** – Search for songs in **English or Hebrew** and pick one for the session.  
+- ✅ **Real-Time Synchronization** – All users see the selected song's **lyrics & chords** updated live.  
+- ✅ **Dynamic Display**:  
+  - **Instrumentalists** see both **chords & lyrics**.  
+  - **Singers** see **lyrics only**.  
+- ✅ **Music Playback** – Listen to the song while playing along.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack  
+- **Frontend**: React.js, Redux, Tailwind CSS  
+- **Backend**: Node.js, Express.js, MongoDB  
+- **Real-Time Communication**: Socket.io  
+- **Authentication**: Cookies, JWT  
+- **State Management**: Redux
