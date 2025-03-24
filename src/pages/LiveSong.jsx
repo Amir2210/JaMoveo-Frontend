@@ -12,9 +12,6 @@ export function LiveSong() {
   const userInstrument = useSelector((storeState) => storeState.userModule.user.instrument)
   const isAdmin = useSelector((storeState) => storeState.userModule.user.isAdmin)
   const navigate = useNavigate()
-  console.log('isAdmin:', isAdmin)
-  console.log('userInstrument:', userInstrument)
-  console.log('selectedSong:', selectedSong)
   const audioRef = useRef(null)
 
   // 🎵 הפעלת השיר אוטומטית כשהקומפוננטה נטענת
@@ -23,7 +20,10 @@ export function LiveSong() {
     if (audioRef.current) {
       audioRef.current.play().catch(error => console.log('Auto-play failed:', error))
     }
-  }, [selectedSong]) // יפעל מחדש כאשר השיר מתחלף
+    return (() => {
+      socketService.off(SOCKET_EVENT_ADMIN_SEARCH_PICK_NEW_SONG, onAdminPauseLive)
+    })
+  }, [selectedSong])
 
   function onAdminPauseLive() {
     navigate('/waiting-room-page')
@@ -58,7 +58,6 @@ export function LiveSong() {
               <button onClick={onGoBackPickSong} className='btn text-white text-lg secondary-bg capitalize border-none'>pick a new song</button>
               : null
             }
-
           </div>
           <div>
             <audio ref={audioRef} src={selectedSong.title === 'Hey Jude' ? hey_jude : veech_shelo} />
