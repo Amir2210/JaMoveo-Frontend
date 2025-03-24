@@ -1,5 +1,5 @@
 import { userService } from '../../services/user.service.js';
-import { socketService, SOCKET_EMIT_ADMIN_SET_SONG } from '../../services/socket.service.js';
+import { socketService, SOCKET_EMIT_ADMIN_SET_SONG, SOCKET_EMIT_ADMIN_SEARCH_FOR_NEW_SONG } from '../../services/socket.service.js';
 import { store } from '../store.js';
 
 import { LOADING_DONE, LOADING_START, SET_SONG } from "../reducers/system.reducer.js";
@@ -74,7 +74,16 @@ export async function setSong(song, isAdmin) {
         }
     } catch (error) {
         console.log('cannot set song')
-        throw err
+        throw error
+    }
+}
+
+export async function goBackPickSong() {
+    try {
+        socketService.emit(SOCKET_EMIT_ADMIN_SEARCH_FOR_NEW_SONG, null)
+    } catch (error) {
+        console.log('cannot pick a new song')
+        throw error
     }
 }
 

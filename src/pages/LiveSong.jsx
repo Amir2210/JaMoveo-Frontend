@@ -1,33 +1,43 @@
 import { useEffect, useRef } from 'react'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import hey_jude from '../data/hey_jude.mp3'
 import veech_shelo from '../data/veech_shelo.mp3'
 import { useSelector } from 'react-redux'
 import { SongLyrics } from '../components/SongLyrics'
+import { goBackPickSong } from '../store/actions/user.actions'
+import { SOCKET_EVENT_ADMIN_SEARCH_PICK_NEW_SONG } from '../services/socket.service'
 
 export function LiveSong() {
   const selectedSong = useSelector((storeState) => storeState.systemModule.songSelected)
   const userInstrument = useSelector((storeState) => storeState.userModule.user.instrument)
+  const isAdmin = useSelector((storeState) => storeState.userModule.user.isAdmin)
+  const navigate = useNavigate()
+  console.log('isAdmin:', isAdmin)
   console.log('userInstrument:', userInstrument)
   console.log('selectedSong:', selectedSong)
   const audioRef = useRef(null)
 
   // 🎵 הפעלת השיר אוטומטית כשהקומפוננטה נטענת
   useEffect(() => {
+    socketService.on(SOCKET_EVENT_ADMIN_SEARCH_PICK_NEW_SONG, onAdminPauseLive)
     if (audioRef.current) {
       audioRef.current.play().catch(error => console.log('Auto-play failed:', error))
     }
   }, [selectedSong]) // יפעל מחדש כאשר השיר מתחלף
 
-  const playAudio = () => {
-    if (audioRef.current) {
-      audioRef.current.play()
-    }
+  function onAdminPauseLive() {
+    navigate('/waiting-room-page')
   }
 
-  const pauseAudio = () => {
-    if (audioRef.current) {
-      audioRef.current.pause()
+
+
+  async function onGoBackPickSong() {
+    try {
+      await goBackPickSong()
+      navigate('/admin-search-song-page')
+    } catch (error) {
+      console.log('error:', error)
+      alert('failed to go back to pisk new song')
     }
   }
 
@@ -44,12 +54,14 @@ export function LiveSong() {
               Now Playing <span className='secondary-txt'>{selectedSong.title} </span>
               by: <span className='secondary-txt'>{selectedSong.artist}</span>
             </h1>
-            <Link to={'/'} className='btn text-white text-lg secondary-bg capitalize border-none'>Home Page</Link>
+            {isAdmin ?
+              <button onClick={onGoBackPickSong} className='btn text-white text-lg secondary-bg capitalize border-none'>pick a new song</button>
+              : null
+            }
+
           </div>
           <div>
             <audio ref={audioRef} src={selectedSong.title === 'Hey Jude' ? hey_jude : veech_shelo} />
-            <button onClick={playAudio}>▶️ נגן</button>
-            <button onClick={pauseAudio}>⏸ עצור</button>
           </div>
           <div>
             <SongLyrics song={selectedSong.fullSong} userInstrument={userInstrument} />

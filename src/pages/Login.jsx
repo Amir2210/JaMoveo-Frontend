@@ -21,7 +21,6 @@ export function Login() {
     ev.preventDefault()
     try {
       const user = await login(credentials)
-      console.log('user:', user)
       if (user.isAdmin) {
         navigate('/admin-search-song-page')
       } else {
