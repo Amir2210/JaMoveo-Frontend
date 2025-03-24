@@ -2,6 +2,7 @@ import { SOCKET_EVENT_ADMIN_CHOOSE_SONG, socketService } from '../services/socke
 import { useEffect } from 'react'
 import { logout, setSong } from '../store/actions/user.actions'
 import { useNavigate } from 'react-router'
+import { toast } from 'react-toastify'
 export function WaitingRoom() {
   const navigate = useNavigate()
   useEffect(() => {
@@ -19,11 +20,11 @@ export function WaitingRoom() {
   async function onLogout() {
     try {
       await logout()
-      alert(`logged out successfully`)
+      toast.success(`logged out successfully`)
       navigate('/')
     } catch (err) {
       console.log('err:', err)
-      alert(`failed to logged out`)
+      toast.error(`failed to logged out`)
     }
   }
   return (

@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link, useNavigate } from 'react-router'
+import { useNavigate } from 'react-router'
 import hey_jude from '../data/hey_jude.mp3'
 import veech_shelo from '../data/veech_shelo.mp3'
 import { useSelector } from 'react-redux'
 import { SongLyrics } from '../components/SongLyrics'
 import { goBackPickSong } from '../store/actions/user.actions'
 import { SOCKET_EVENT_ADMIN_SEARCH_PICK_NEW_SONG } from '../services/socket.service'
+import { toast } from 'react-toastify'
 
 export function LiveSong() {
   const selectedSong = useSelector((storeState) => storeState.systemModule.songSelected)
@@ -37,8 +38,7 @@ export function LiveSong() {
       await goBackPickSong()
       navigate('/admin-search-song-page')
     } catch (error) {
-      console.log('error:', error)
-      alert('Failed to go back to pick a new song')
+      toast.error('Failed to go back to pick a new song')
     }
   }
 

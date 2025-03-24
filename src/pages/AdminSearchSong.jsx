@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { songsData } from '../data/song.data'
 import { logout, setSong } from '../store/actions/user.actions'
 import { useNavigate } from 'react-router'
-
+import { toast } from 'react-toastify'
 export function AdminSearchSong() {
   const [search, setSearch] = useState('')
   const [results, setResults] = useState([])
@@ -53,11 +53,11 @@ export function AdminSearchSong() {
   async function onLogout() {
     try {
       await logout()
-      alert(`logged out successfully`)
+      toast.success(`logged out successfully`)
       navigate('/')
     } catch (err) {
       console.log('err:', err)
-      alert(`failed to logged out`)
+      toast.error(`failed to logged out`)
     }
   }
 

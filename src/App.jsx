@@ -1,4 +1,3 @@
-import { AppHeader } from './components/AppHeader'
 import { Routes, Route } from 'react-router'
 import { HomeIndex } from './pages/HomeIndex'
 import { Login } from './pages/Login'
@@ -7,12 +6,13 @@ import { SignUpAdmin } from './pages/SignUpAdmin'
 import { WaitingRoom } from './pages/WaitingRoom'
 import { AdminSearchSong } from './pages/AdminSearchSong'
 import { LiveSong } from './pages/LiveSong'
-
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from 'react-toastify'
 function App() {
 
   return (
     <main>
-      {/* <AppHeader /> */}
+      <ToastContainer position='top-center' autoClose={2000} />
       <Routes>
         <Route path='/' element={<HomeIndex />} />
         <Route path='/login-page' element={<Login />} />

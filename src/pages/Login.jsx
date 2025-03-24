@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router';
 import { login } from '../store/actions/user.actions';
 import { useState } from 'react';
+import { toast } from 'react-toastify'
 function getEmptyCredentials() {
   return {
     username: '',
@@ -23,6 +24,7 @@ export function Login() {
       const user = await login(credentials)
       if (user.isAdmin) {
         navigate('/admin-search-song-page')
+        toast.success("You've logged in successfully")
       } else {
         navigate('/waiting-room-page')
       }

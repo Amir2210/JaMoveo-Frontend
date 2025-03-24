@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router';
 import { login, signup } from '../store/actions/user.actions';
 import { useState } from 'react';
+import { toast } from 'react-toastify'
 function getEmptyCredentials() {
   return {
     username: '',
@@ -25,10 +26,10 @@ export function SignUpAdmin() {
     try {
       const user = await signup(credentials)
       await login(credentials)
-      alert(`welcome ${credentials.username} 😀`)
+      toast.success(`welcome ${credentials.username} 😀`)
       navigate('/admin-search-song-page')
     } catch (err) {
-      alert(`failed to create user try again later`)
+      toast.error(`failed to create user try again later`)
     }
   }
   const { username, password, instrument } = credentials
