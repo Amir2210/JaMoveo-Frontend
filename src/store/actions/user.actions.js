@@ -3,21 +3,7 @@ import { socketService, SOCKET_EMIT_ADMIN_SET_SONG, SOCKET_EMIT_ADMIN_SEARCH_FOR
 import { store } from '../store.js';
 
 import { LOADING_DONE, LOADING_START, SET_SONG } from "../reducers/system.reducer.js";
-import { SET_USER, SET_USERS, } from "../reducers/user.reducer.js";
-
-export async function loadUsers() {
-    try {
-        store.dispatch({ type: LOADING_START })
-        const users = await userService.getUsers()
-        store.dispatch({ type: SET_USERS, users })
-    } catch (err) {
-        console.log('UserActions: err in loadUsers', err)
-    } finally {
-        store.dispatch({ type: LOADING_DONE })
-    }
-}
-
-
+import { SET_USER, } from "../reducers/user.reducer.js";
 
 export async function login(credentials) {
     try {
@@ -84,14 +70,5 @@ export async function goBackPickSong() {
     } catch (error) {
         console.log('cannot pick a new song')
         throw error
-    }
-}
-
-export async function loadUser(userId) {
-    try {
-        const user = await userService.getById(userId);
-    } catch (err) {
-        showErrorMsg('Cannot load user')
-        console.log('Cannot load user', err)
     }
 }

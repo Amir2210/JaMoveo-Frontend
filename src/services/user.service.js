@@ -8,28 +8,7 @@ export const userService = {
     signup,
     getLoggedinUser,
     saveLocalUser,
-    getUsers,
-    getById,
-
 }
-
-window.userService = userService
-
-
-function getUsers() {
-    return httpService.get(`user`)
-}
-
-
-
-async function getById(userId) {
-    const user = await httpService.get(`user/${userId}`)
-    return user
-}
-
-
-
-
 
 async function login(userCred) {
     const user = await httpService.post('auth/login', userCred)
@@ -42,8 +21,8 @@ async function signup(userCred) {
 }
 
 async function logout() {
-    return await httpService.post('auth/logout')
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
+    return await httpService.post('auth/logout')
 }
 
 function saveLocalUser(user) {
