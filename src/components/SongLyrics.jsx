@@ -1,4 +1,5 @@
-export function SongLyrics({ song }) {
+export function SongLyrics({ song, userInstrument }) {
+  console.log('userInstrument:', userInstrument)
   return (
     <div>
       {song.map((line, lineIndex) => (
@@ -7,9 +8,10 @@ export function SongLyrics({ song }) {
             <span key={wordIndex} className='mr-2'>
               {word.chords ? (
                 <span className='mr-2 text-center inline-block'>
-                  <span className='font-bold secondary-txt'>
-                    {word.chords}
-                  </span>
+                  {userInstrument !== 'vocals' ?
+                    <span className='font-bold secondary-txt'>
+                      {word.chords}
+                    </span> : null}
                   <br />
                   {word.lyrics}
                 </span>
