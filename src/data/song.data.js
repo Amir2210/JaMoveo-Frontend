@@ -42,22 +42,180 @@ export const songsData = [
         { lyrics: "better", chords: "F" }
       ],
       [
+        { lyrics: "Hey" },
+        { lyrics: "Jude", chords: "F" },
+        { lyrics: "don't" },
+        { lyrics: "be" },
+        { lyrics: "afraid", chords: "C" }
+      ],
+      [
+        { lyrics: "You" },
+        { lyrics: "were" },
+        { lyrics: "made" },
+        { lyrics: "to" },
+        { lyrics: "go" },
+        { lyrics: "out" },
+        { lyrics: "and" },
+        { lyrics: "get", chords: "C7" },
+        { lyrics: "her" }
+      ],
+      [
+        { lyrics: "The" },
+        { lyrics: "minute" },
+        { lyrics: "you" },
+        { lyrics: "let" },
+        { lyrics: "her" },
+        { lyrics: "under" },
+        { lyrics: "your" },
+        { lyrics: "skin", chords: "F" }
+      ],
+      [
+        { lyrics: "Then" },
+        { lyrics: "you" },
+        { lyrics: "begin" },
+        { lyrics: "to" },
+        { lyrics: "make" },
+        { lyrics: "it" },
+        { lyrics: "better", chords: "C" }
+      ],
+      [
+        { lyrics: "And" },
+        { lyrics: "anytime" },
+        { lyrics: "you" },
+        { lyrics: "feel" },
+        { lyrics: "the" },
+        { lyrics: "pain", chords: "C7" },
+        { lyrics: "hey" },
+        { lyrics: "Jude", chords: "F" },
+        { lyrics: "refrain" }
+      ],
+      [
+        { lyrics: "Don't" },
+        { lyrics: "carry" },
+        { lyrics: "the" },
+        { lyrics: "world" },
+        { lyrics: "upon" },
+        { lyrics: "your" },
+        { lyrics: "shoulders", chords: "Bb" }
+      ],
+      [
+        { lyrics: "For" },
+        { lyrics: "well" },
+        { lyrics: "you" },
+        { lyrics: "know" },
+        { lyrics: "that" },
+        { lyrics: "it's" },
+        { lyrics: "a" },
+        { lyrics: "fool" },
+        { lyrics: "who" },
+        { lyrics: "plays" },
+        { lyrics: "it" },
+        { lyrics: "cool", chords: "F" }
+      ],
+      [
+        { lyrics: "By" },
+        { lyrics: "making" },
+        { lyrics: "his" },
+        { lyrics: "world" },
+        { lyrics: "a" },
+        { lyrics: "little" },
+        { lyrics: "colder", chords: "C" }
+      ],
+      [
+        { lyrics: "So" },
+        { lyrics: "let" },
+        { lyrics: "it" },
+        { lyrics: "out" },
+        { lyrics: "and" },
+        { lyrics: "let" },
+        { lyrics: "it" },
+        { lyrics: "in", chords: "C7" },
+        { lyrics: "hey" },
+        { lyrics: "Jude", chords: "F" },
+        { lyrics: "begin" }
+      ],
+      [
+        { lyrics: "You're" },
+        { lyrics: "waiting" },
+        { lyrics: "for" },
+        { lyrics: "someone" },
+        { lyrics: "to" },
+        { lyrics: "perform" },
+        { lyrics: "with", chords: "Bb" }
+      ],
+      [
+        { lyrics: "And" },
+        { lyrics: "don't" },
+        { lyrics: "you" },
+        { lyrics: "know" },
+        { lyrics: "that" },
+        { lyrics: "it's" },
+        { lyrics: "just" },
+        { lyrics: "you", chords: "F" },
+        { lyrics: "hey" },
+        { lyrics: "Jude", chords: "C" },
+        { lyrics: "you'll" },
+        { lyrics: "do" }
+      ],
+      [
+        { lyrics: "The" },
+        { lyrics: "movement" },
+        { lyrics: "you" },
+        { lyrics: "need" },
+        { lyrics: "is" },
+        { lyrics: "on" },
+        { lyrics: "your" },
+        { lyrics: "shoulder", chords: "C7" }
+      ],
+      [
+        { lyrics: "Hey" },
+        { lyrics: "Jude", chords: "F" },
+        { lyrics: "don't" },
+        { lyrics: "make" },
+        { lyrics: "it" },
+        { lyrics: "bad" }
+      ],
+      [
+        { lyrics: "Take" },
+        { lyrics: "a" },
+        { lyrics: "sad", chords: "C" },
+        { lyrics: "song", chords: "C7" },
+        { lyrics: "and" },
+        { lyrics: "make" },
+        { lyrics: "it" },
+        { lyrics: "better", chords: "F" }
+      ],
+      [
+        { lyrics: "Remember" },
+        { lyrics: "to" },
+        { lyrics: "let" },
+        { lyrics: "her" },
+        { lyrics: "under" },
+        { lyrics: "your" },
+        { lyrics: "skin", chords: "Bb" }
+      ],
+      [
+        { lyrics: "Then" },
+        { lyrics: "you'll" },
+        { lyrics: "begin" },
+        { lyrics: "to" },
+        { lyrics: "make" },
+        { lyrics: "it" },
+        { lyrics: "better", chords: "F" }
+      ],
+      [
+        { lyrics: "Better" },
+        { lyrics: "better" },
+        { lyrics: "better" },
+        { lyrics: "better", chords: "C" },
+        { lyrics: "better" },
+        { lyrics: "better" }
+      ],
+      [
+        { lyrics: "Oh" },
         { lyrics: "Na-na-na-na-na" },
         { lyrics: "Na-na-na-na-na-na-na" },
-        { lyrics: "Na-na-na-na-na-na-na", chords: "C" }
-      ],
-      [
-        { lyrics: "Hey Jude" },
-        { lyrics: "you've" },
-        { lyrics: "found" },
-        { lyrics: "her" },
-        { lyrics: "now", chords: "F" }
-      ],
-      [
-        { lyrics: "Go" },
-        { lyrics: "and" },
-        { lyrics: "get" },
-        { lyrics: "her", chords: "C" }
+        { lyrics: "Na-na-na-na-na-na-na", chords: "F" }
       ]
     ]
   },
