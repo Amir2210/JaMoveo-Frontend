@@ -7,7 +7,7 @@ export function AdminSearchSong() {
   const [search, setSearch] = useState('')
   const [results, setResults] = useState([])
   const navigate = useNavigate()
-  // פונקציה לחיפוש שירים ללא תלות באותיות קטנות/גדולות
+
   const handleSearch = (query) => {
     setSearch(query)
     if (!query) {
@@ -16,16 +16,16 @@ export function AdminSearchSong() {
     }
 
     const lowerQuery = query.toLowerCase() // ממיר את החיפוש לאותיות קטנות
-
     const filteredSongs = songsData
       .map(song => {
         const titleMatch = song.title.toLowerCase().includes(lowerQuery) // בדיקת שם השיר
+        const artistMatch = song.artist.toLowerCase().includes(lowerQuery) // בדיקת שם האמן
 
         const matchedLines = song.lyrics
           .map(line => line.filter(word => word.lyrics.toLowerCase().includes(lowerQuery))) // מחפש מילים בשיר
           .filter(line => line.length > 0) // מסנן שורות ריקות
 
-        if (titleMatch || matchedLines.length > 0) {
+        if (titleMatch || artistMatch || matchedLines.length > 0) {
           return {
             title: song.title,
             artist: song.artist,
@@ -40,6 +40,7 @@ export function AdminSearchSong() {
 
     setResults(filteredSongs)
   }
+
 
   async function onSetSong(song) {
     try {
@@ -75,7 +76,6 @@ export function AdminSearchSong() {
             <h1 className='text-5xl sm:text-6xl font-bold tracking-wide capitalize mb-6'>
               Search any <span className='secondary-txt'>song...</span>
             </h1>
-
             <label className="input input-bordered flex items-center gap-2">
               <input
                 type="text"
