@@ -13,6 +13,7 @@ export function LiveSong() {
   const userInstrument = useSelector((storeState) => storeState.userModule.user.instrument)
   const isAdmin = useSelector((storeState) => storeState.userModule.user.isAdmin)
   const navigate = useNavigate()
+
   const audioRef = useRef(null)
   const scrollRef = useRef(null)
   const [isAutoScroll, setIsAutoScroll] = useState(false)
@@ -20,9 +21,14 @@ export function LiveSong() {
 
   useEffect(() => {
     socketService.on(SOCKET_EVENT_ADMIN_SEARCH_PICK_NEW_SONG, onAdminPauseLive)
+
     if (audioRef.current) {
-      audioRef.current.play().catch(error => console.log('Auto-play failed:', error))
+      const playPromise = audioRef.current.play()
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => console.log('Auto-play failed:', error))
+      }
     }
+
     return () => {
       socketService.off(SOCKET_EVENT_ADMIN_SEARCH_PICK_NEW_SONG, onAdminPauseLive)
       stopAutoScroll()
@@ -53,8 +59,9 @@ export function LiveSong() {
   function startAutoScroll() {
     if (scrollRef.current) {
       scrollIntervalRef.current = setInterval(() => {
+        // Scroll the container down by 1px
         scrollRef.current.scrollBy({ top: 1, behavior: 'smooth' })
-      }, 60)
+      }, 50) // Adjust the scroll speed by changing the interval time
       setIsAutoScroll(true)
     }
   }
