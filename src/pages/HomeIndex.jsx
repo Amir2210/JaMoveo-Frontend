@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 
 export function HomeIndex() {
   return (
-    <section className='main-bg h-screen'>
+    <section className='main-bg min-h-screen'>
       <div className="small-container sm:big-container">
         <div className='navbar py-6'>
           <div className='text-4xl secondary-bg flex text-white font-mono font-bold size-14 justify-center items-center rounded-lg'>J</div>
@@ -15,7 +15,7 @@ export function HomeIndex() {
             <Link to={'/login-page'} className='btn text-white text-lg secondary-bg capitalize  border-none'>login / register</Link>
           </div>
           <div>
-            <img className='size-48 sm:size-full' src="https://res.cloudinary.com/dxm0sqcfp/image/upload/v1742761436/jamoveo/undraw_mello_uiud_gml1lf.svg" alt="home page ilustration" />
+            <img className='size-36 sm:size-full' src="https://res.cloudinary.com/dxm0sqcfp/image/upload/v1742761436/jamoveo/undraw_mello_uiud_gml1lf.svg" alt="home page ilustration" />
           </div>
         </div>
       </div>

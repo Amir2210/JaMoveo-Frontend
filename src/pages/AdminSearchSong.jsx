@@ -63,7 +63,7 @@ export function AdminSearchSong() {
   }
 
   return (
-    <section className='main-bg h-screen'>
+    <section className='main-bg min-h-screen'>
       <div className="small-container sm:big-container">
         <div className='navbar py-6'>
           <div className='text-4xl secondary-bg flex text-white font-mono font-bold size-14 justify-center items-center rounded-lg'>J</div>
@@ -109,7 +109,6 @@ export function AdminSearchSong() {
               ) : null}
             </div>
           </div>
-
           <div>
             <img className='size-48 sm:size-full' src="https://res.cloudinary.com/dxm0sqcfp/image/upload/v1742741494/jamoveo/undraw_happy-music_na4p_ir0kkh.svg" alt="admin search song ilustration" />
           </div>
