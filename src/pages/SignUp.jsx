@@ -53,8 +53,8 @@ export function SignUp() {
     <section className='main-bg h-screen flex flex-col justify-center items-center px-10'>
       <form onSubmit={onSubmit} className='sm:bg-white sm:px-28 py-8 rounded-lg sm:border-solid sm:border-y-4 sm:border-t-[#1DB954] sm:shadow-xl'>
         <Link to={'/'} className=' flex justify-center items-center'>
-          <div className=' flex text-4xl secondary-bg text-white font-mono font-bold size-14 justify-center items-center rounded-lg'>J</div>
-          <div className=' ml-4 text-3xl font-bold tracking-wide secondary-txt'>JaMoveo</div>
+          <div className=' flex text-4xl secondary-bg text-white font-mono font-bold size-14 justify-center items-center rounded-lg'>S</div>
+          <div className=' ml-4 text-3xl font-bold tracking-wide secondary-txt'>SingRoom</div>
         </Link>
         <div className='flex justify-center items-center'>
           <h1 className='text-white sm:text-black text-3xl my-4 capitalize'>register</h1>

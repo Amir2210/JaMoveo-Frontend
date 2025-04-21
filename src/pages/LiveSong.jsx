@@ -78,8 +78,8 @@ export function LiveSong() {
     <section className='main-bg' ref={scrollRef} style={{ maxHeight: '100vh', overflowY: 'auto' }}>
       <div className="small-container sm:big-container">
         <div className='navbar py-6'>
-          <div className='text-4xl secondary-bg flex text-white font-mono font-bold size-14 justify-center items-center rounded-lg'>J</div>
-          <div className='ml-4 text-3xl font-bold tracking-wide text-white'>jaMoveo</div>
+          <div className='text-4xl secondary-bg flex text-white font-mono font-bold size-14 justify-center items-center rounded-lg'>S</div>
+          <div className='ml-4 text-3xl font-bold tracking-wide text-white'>SingRoom</div>
         </div>
         <div className='grid sm:grid-cols-2 gap-10 mt-5 sm:mt-20 text-[#B3B3B3]'>
           <div>
